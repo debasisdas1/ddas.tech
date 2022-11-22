@@ -72,11 +72,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         self.predicateEditor.rowTemplates.removeAll()
-        let defaultPred = NSPredicate(format: defaultPredicate)
         self.predicateEditor.rowTemplates = self.predicateRowTemplates()
-        print(self.predicateEditor.rowTemplates)
-        print(defaultPred)
-        self.predicateEditor.objectValue = defaultPred
+        self.predicateEditor.objectValue = NSPredicate(format: defaultPredicate)
     }
 
     @IBAction func generateQuery(_ sender:Any){
